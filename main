@@ -1,0 +1,24 @@
+public class Main {
+    public static void main(String[] args) {
+        Participant[] participants = {
+                new Participant("John", 1000, 50),
+                new Participant("Mary", 800, 40),
+                new Participant("Bob", 1200, 60),
+                new Participant("Alice", 900, 45)
+        };
+
+        Team team = new Team("Team A", participants);
+
+        Obstacle[] obstacles = {
+                new Obstacle(400, 30),
+                new Obstacle(600, 50),
+                new Obstacle(800, 60)
+        };
+
+        Course course = new Course(obstacles);
+        course.doIt(team);
+
+        team.showMembersInfo();
+        team.showAllMembersInfo();
+    }
+}
