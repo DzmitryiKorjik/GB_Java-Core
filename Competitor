@@ -1,0 +1,4 @@
+public interface Competitor {
+    void doIt(Obstacle o);
+    boolean isOnDistance();
+}
