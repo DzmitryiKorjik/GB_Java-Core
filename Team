@@ -1,0 +1,25 @@
+public class Team {
+    private String teamName;
+    private Participant[] participants;
+
+    public Team(String teamName, Participant[] participants) {
+        this.teamName = teamName;
+        this.participants = participants;
+    }
+
+    public void showMembersInfo() {
+        System.out.println("Team members who completed the course:");
+        for (Participant participant : participants) {
+            if (participant.isOnDistance()) {
+                System.out.println(participant);
+            }
+        }
+    }
+
+    public void showAllMembersInfo() {
+        System.out.println("Team members:");
+        for (Participant participant : participants) {
+            System.out.println(participant);
+        }
+    }
+}
