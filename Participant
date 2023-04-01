@@ -1,0 +1,46 @@
+public class Participant implements Competitor {
+    private String name;
+    private int maxRunDistance;
+    private int maxJumpHeight;
+    private boolean onDistance;
+
+    public Participant(String name, int maxRunDistance, int maxJumpHeight) {
+        this.name = name;
+        this.maxRunDistance = maxRunDistance;
+        this.maxJumpHeight = maxJumpHeight;
+        this.onDistance = true;
+    }
+
+    @Override
+    public void doIt(Obstacle o) {
+        o.doIt(this);
+    }
+
+    @Override
+    public boolean isOnDistance() {
+        return onDistance;
+    }
+
+    public void run(int distance) {
+        if (distance <= maxRunDistance) {
+            System.out.println(name + " has run " + distance + " meters.");
+        } else {
+            System.out.println(name + " failed to run " + distance + " meters and is out of the competition.");
+            onDistance = false;
+        }
+    }
+
+    public void jump(int height) {
+        if (height <= maxJumpHeight) {
+            System.out.println(name + " has jumped over " + height + " centimeters.");
+        } else {
+            System.out.println(name + " failed to jump over " + height + " centimeters and is out of the competition.");
+            onDistance = false;
+        }
+    }
+
+    @Override
+    public String toString() {
+        return name;
+    }
+}
