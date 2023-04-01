@@ -1,0 +1,21 @@
+public class Obstacle {
+    private int distance;
+    private int height;
+
+    public Obstacle(int distance, int height) {
+        this.distance = distance;
+        this.height = height;
+    }
+
+    public void doIt(Participant p) {
+        p.run(distance);
+        if (p.isOnDistance()) {
+            p.jump(height);
+            if (!p.isOnDistance()) {
+                System.out.println(p + " is out of the competition.");
+            }
+        } else {
+            System.out.println(p + " is out of the competition.");
+        }
+    }
+}
