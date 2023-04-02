@@ -7,6 +7,22 @@ public class Team {
         this.participants = participants;
     }
 
+    public String getTeamName() {
+        return teamName;
+    }
+
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
+    }
+
+    public Participant[] getParticipants() {
+        return participants;
+    }
+
+    public void setParticipants(Participant[] participants) {
+        this.participants = participants;
+    }
+
     public void showMembersInfo() {
         System.out.println("Team members who completed the course:");
         for (Participant participant : participants) {
@@ -22,4 +38,5 @@ public class Team {
             System.out.println(participant);
         }
     }
+
 }
